@@ -3,7 +3,7 @@ project(PW_AudioLED)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c udp.c udp.h BBB_P10.c BBB_P10.h)
+set(SOURCE_FILES main.c udp.c udp.h BBB_P10.c BBB_P10.h Images)
 
 add_executable(PW_AudioLED ${SOURCE_FILES})
 target_link_libraries(PW_AudioLED jack m)

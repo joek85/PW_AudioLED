@@ -226,15 +226,15 @@ gboolean UpdateSpectrum(gpointer data) {
 
             PeakMeterLEDLHeightPeaks= ((peakDataLeftPeaks - minDBValue) / dbScale) * (HEIGHT);
             if (PeakMeterLEDLHeightPeaks <= 0){
-                PeakMeterLEDLHeightPeaks = 1;
+                PeakMeterLEDLHeightPeaks = 0;
             }
             PeakMeterLEDRHeightPeaks= ((peakDataRightPeaks - minDBValue) / dbScale) * (HEIGHT);
             if (PeakMeterLEDRHeightPeaks <= 0){
-                PeakMeterLEDRHeightPeaks = 1;
+                PeakMeterLEDRHeightPeaks = 0;
             }
 
             drawLine(WIDTH/2,0,WIDTH/2,HEIGHT);
-
+            drawLine(0,HEIGHT-1,WIDTH,HEIGHT-1);
             drawLine((WIDTH/2) - 2, HEIGHT, (WIDTH/2) - 2, (int) (HEIGHT - PeakMeterLedLHeight));
             drawLine((WIDTH/2) - 3, HEIGHT, (WIDTH/2) - 3, (int) (HEIGHT - PeakMeterLedLHeight));
             drawLine((WIDTH/2) - 4, HEIGHT, (WIDTH/2) - 4, (int) (HEIGHT - PeakMeterLedLHeight));
@@ -255,23 +255,24 @@ gboolean UpdateSpectrum(gpointer data) {
         case 1:
             PeakMeterLedRHeight= (((peakDataRight - minDBValue) / dbScale) * (WIDTH));
             if (PeakMeterLedRHeight <= 0){
-                PeakMeterLedRHeight = 1;
+                PeakMeterLedRHeight = 0;
             }
             PeakMeterLedLHeight= (((peakDataLeft - minDBValue) / dbScale) * (WIDTH));
             if (PeakMeterLedLHeight <= 0){
-                PeakMeterLedLHeight = 1;
+                PeakMeterLedLHeight = 0;
             }
 
             PeakMeterLEDLHeightPeaks= ((peakDataLeftPeaks - minDBValue) / dbScale) * (WIDTH);
             if (PeakMeterLEDLHeightPeaks <= 0){
-                PeakMeterLEDLHeightPeaks = 1;
+                PeakMeterLEDLHeightPeaks = 0;
             }
             PeakMeterLEDRHeightPeaks= ((peakDataRightPeaks - minDBValue) / dbScale) * (WIDTH);
             if (PeakMeterLEDRHeightPeaks <= 0){
-                PeakMeterLEDRHeightPeaks = 1;
+                PeakMeterLEDRHeightPeaks = 0;
             }
 
             drawLine(0,HEIGHT/2,WIDTH,HEIGHT/2);
+            drawLine(0,0,0,HEIGHT);
 
             drawLine(0, (HEIGHT/2)-2, (int) PeakMeterLedLHeight, (HEIGHT / 2) - 2);
             drawLine(0, (HEIGHT/2)-3, (int) PeakMeterLedLHeight, (HEIGHT / 2) - 3);
@@ -302,14 +303,15 @@ gboolean UpdateSpectrum(gpointer data) {
 
             PeakMeterLEDLHeightPeaks= ((peakDataLeftPeaks - minDBValue) / dbScale) * (WIDTH);
             if (PeakMeterLEDLHeightPeaks <= 0){
-                PeakMeterLEDLHeightPeaks = 1;
+                PeakMeterLEDLHeightPeaks = 0;
             }
             PeakMeterLEDRHeightPeaks= ((peakDataRightPeaks - minDBValue) / dbScale) * (WIDTH);
             if (PeakMeterLEDRHeightPeaks <= 0){
-                PeakMeterLEDRHeightPeaks = 1;
+                PeakMeterLEDRHeightPeaks = 0;
             }
 
             drawLine(0,HEIGHT/2,WIDTH,HEIGHT/2);
+            drawLine(WIDTH-1,0,WIDTH-1,HEIGHT);
 
             drawLine(WIDTH, (HEIGHT/2)-2, (int) (WIDTH - PeakMeterLedLHeight), (HEIGHT / 2) - 2);
             drawLine(WIDTH, (HEIGHT/2)-3, (int) (WIDTH - PeakMeterLedLHeight), (HEIGHT / 2) - 3);
@@ -331,11 +333,11 @@ gboolean UpdateSpectrum(gpointer data) {
         case 3:
             PeakMeterLedRHeight= (((peakDataRight - minDBValue) / dbScale) * (WIDTH/2));
             if (PeakMeterLedRHeight <= 0){
-                PeakMeterLedRHeight = 1;
+                PeakMeterLedRHeight = 0;
             }
             PeakMeterLedLHeight= (((peakDataLeft - minDBValue) / dbScale) * (WIDTH/2));
             if (PeakMeterLedLHeight <= 0){
-                PeakMeterLedLHeight = 1;
+                PeakMeterLedLHeight = 0;
             }
 
             drawBox(0,0,WIDTH/2,HEIGHT-1);

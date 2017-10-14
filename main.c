@@ -54,7 +54,6 @@ double PeakMeterLedRHeight;
 double PeakMeterLedLHeight;
 
 double PeakMeterLEDRHeightPeaks;
-
 double PeakMeterLEDLHeightPeaks;
 
 float read_peakL() {
